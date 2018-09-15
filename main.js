@@ -1,12 +1,30 @@
 let paginaPergunta = document.querySelector ("#pagina-pergunta");
 let paginaSabre = document.querySelector("#pagina-sabre");
 let botaoSith = document.querySelector(".sith");
+let botaoGrey = document.querySelector(".grey")
 let botaoJedi = document.querySelector(".jedi");
 let lamina = document.querySelector(".lamina");
+let cabo = document.querySelector(".cabo");
+let botaoBack = document.querySelector (".back");
+let somSabre = new Audio ("Lightsaber.mp3")
+
+function retornar(){
+    paginaSabre.style.display="none";
+    paginaPergunta.style.display="flex";
+}
 
 function escolherSith(){
     paginaPergunta.style.display="none";
-    paginaSabre.style.display="flex";   
+    paginaSabre.style.display="flex";
+    lamina.style.background="linear-gradient(90deg, #ff0000, rgb(250, 76, 76), #ff0000)";
+    lamina.style.boxShadow= "0 0 50px #ff0000";   
+}
+
+function escolherGrey(){
+    paginaPergunta.style.display="none";
+    paginaSabre.style.display="flex";
+    lamina.style.background="linear-gradient(90deg, #a1a1a1, #cacaca, #a1a1a1)"
+    lamina.style.boxShadow = "0 0 50px #a1a1a1";
 }
 
 function escolherJedi(){
@@ -19,15 +37,19 @@ function escolherJedi(){
 function alternarSabre(){
     if(lamina.style.opacity ==1){
     lamina.style.opacity=0;
+    
     }
     else{
     lamina.style.opacity=1;
+    somSabre.play();
     }
 }
 
+botaoBack.onclick = retornar;
+botaoGrey.onclick = escolherGrey;
 botaoSith.onclick = escolherSith;
 botaoJedi.onclick = escolherJedi;
-paginaSabre.onclick = alternarSabre;
+cabo.onclick = alternarSabre;
 
 
 
