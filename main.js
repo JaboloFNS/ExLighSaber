@@ -6,7 +6,8 @@ let botaoJedi = document.querySelector(".jedi");
 let lamina = document.querySelector(".lamina");
 let cabo = document.querySelector(".cabo");
 let botaoBack = document.querySelector (".back");
-let somSabre = new Audio ("Lightsaber.mp3")
+let somSabre = new Audio ("Lightsaber.mp3");
+let somSabreOff = new Audio ("LightsaberOff.mp3");
 
 function retornar(){
     paginaSabre.style.display="none";
@@ -37,6 +38,7 @@ function escolherJedi(){
 function alternarSabre(){
     if(lamina.style.opacity ==1){
     lamina.style.opacity=0;
+    somSabreOff.play();
     
     }
     else{
